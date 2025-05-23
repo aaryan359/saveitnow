@@ -1,32 +1,24 @@
 
 
-import {View, Text} from 'react-native';
-import React, {useEffect} from 'react';
-import {NavigationContainer, ThemeProvider} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-
+import { View, Text } from 'react-native';
+import React from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigation from './BottomTabNavigation';
 import AuthNavigation from './AuthNavigation';
 
 
-const Stack = createNativeStackNavigator();
+
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 function Navigation() {
-
-   const Theme = {
-     colors: {
-       background: true ? '#000' : '#fff',
-       text: true ? '#fff' : '#000',
-     },
-   };
-
-
-
   return (
-    <NavigationContainer >
+   <NavigationContainer >
       <Stack.Navigator>
-        {!true ? (
+        {!true? (
           <Stack.Screen
             name="Auth"
             component={AuthNavigation}
@@ -40,20 +32,15 @@ function Navigation() {
           />
         )}
       </Stack.Navigator>
+     
     </NavigationContainer>
+    
   );
 }
 
 
-
-
 export default function MainNavigation() {
   return (
-    
-    
-      
-           <Navigation />
-   
-   
+    <Navigation />
   );
 }

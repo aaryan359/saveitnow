@@ -7,9 +7,11 @@ import MainNavigation from './src/navigations/MainNavigation'
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <MainNavigation />
-    </Provider>
+
+     <View style={{ flex: 1 }}>
+          <MainNavigation />
+     </View>
+
   )
 }
 
